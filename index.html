@@ -4,9 +4,198 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.mxpnl.com/libs/mixpanel-platform/css/reset.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.mxpnl.com/libs/mixpanel-platform/build/mixpanel-platform.v0.latest.min.css">
     <script src="https://cdn.mxpnl.com/libs/mixpanel-platform/build/mixpanel-platform.v0.latest.min.js"></script>
+    <script type="text/javascript" src="d3.v2.js"></script>
+        <style type="text/css">
+    
+    .node {
+        font: 1.2em Gill Sans, sans-serif;
+    }
+    .link 
+    {
+        fill: none;
+        stroke: #ddd;
+        stroke-width: 1px;
+    }
+    #chart {
+        padding: 0px;
+        padding-left: 100px;
+        font-family: Gill Sans, sans-serif;
+        text-align: center;
+        border: 0px solid red;
+    }
+
+    text.region {
+        fill: #e3e3f2;
+        font-size: 3em;
+    }
+    p {
+        font: 1.2em Gill Sans, sans-serif;
+        color: #aaa;
+        font-weight: normal;
+    }
+    #banner {
+        text-align: left;
+        border: 0px solid black;
+    }
+    #header {
+        position: absolute;
+        width: 180px;
+        border: 0px solid blue;
+    }
+    
+    #header p {
+        color: #aaa;
+        font: 0.9em Gill Sans, sans-serif;       
+    }
+    #header .emphasis {
+        font: 1.1em Gill Sans, sans-serif;
+        color: #2397F7;
+        
+    }
+    #header .bigger {
+        font: 1.1em Gill Sans, sans-serif;
+    }
+    .fb-like {
+        float: right;
+        right: 10px;
+        top: 20px;
+    }
+    .twitter {
+        float: right;
+        margin-top: 20px;
+    }
+    #credit {
+        text-align: center;
+    }    
+    a {
+        color: #666;        
+        text-decoration: none;        
+    }
+    a:hover {
+        color: #2397F7;        
+    }
+    </style>
   </head>
   <body class="mixpanel-platform-body">
-    <h1>Hello, World!</h1>
+    <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+                fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+        </script>               
+        
+        <div class="twitter">
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://thepowerrank.com/visual/NCAA_Tournament_Predictions">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </div>
+        <div class="fb-like" data-href="http://thepowerrank.com/visual/NCAA_Tournament_Predictions" data-send="false" data-layout="button_count" data-width="50" data-show-faces="false" data-font="lucida grande"></div>
+        <div id="banner"><a href="http://thepowerrank.com/"><img src="http://thepowerrank.com/img/banner.png" width="500"/></a></div>
+        <div id="header"><p class="bigger">Which team will win the NCAA Tournament?</p>
+                <p>This interactive bracket gives you the odds for the 2015 
+                tournament based on SI.com's projections from March 12th. It will be updated with the actual field on Sunday night.</p>  
+                <p>To unlock these win probabilities, 
+                hover over a circle to see the likelihood that a team wins a game.
+                To see how your team will do, hover over its name. </p> 
+                <p>The <span class="emphasis">416</span> win probabilities come from my 
+                <a href="http://thepowerrank.com/college-basketball/">college basketball rankings</a>, 
+                which result from crunching <span class="emphasis">over 10,000</span> numbers.</p>
+        </div>
+        <div id="chart"></div>
+        <div id="credit"><p><font size="5" color="#2397F7">These numbers are not enough to win your pool. You need the right strategy.<br>Check out my book <a href="http://thepowerrank.com/tourney-book/"><em>How to win your NCAA tournament pool</em></a>.<br><br>For a sample chapter, sign up for my free email list.<br>Enter your email and click "Sign Up Now."</font></p></div>
+<!-- AWeber Web Form Generator 3.0 -->
+<style type="text/css">
+#af-form-261449952 .af-body .af-textWrap{width:98%;display:block;float:none;}
+#af-form-261449952 .af-body input.text, #af-form-261449952 .af-body textarea{background-color:#FFFFFF;border-color:#919191;border-width:1px;border-style:solid;color:#000000;text-decoration:none;font-style:normal;font-weight:normal;font-size:12px;font-family:Verdana, sans-serif;}
+#af-form-261449952 .af-body input.text:focus, #af-form-261449952 .af-body textarea:focus{background-color:#FFFAD6;border-color:#030303;border-width:1px;border-style:solid;}
+#af-form-261449952 .af-body label.previewLabel{display:block;float:none;text-align:left;width:auto;color:#FFFFFF;text-decoration:none;font-style:normal;font-weight:bold;font-size:16px;font-family:Verdana, sans-serif;}
+#af-form-261449952 .af-body{padding-bottom:15px;padding-top:15px;background-repeat:no-repeat;background-position:inherit;background-image:none;color:#000000;font-size:11px;font-family:Verdana, sans-serif;}
+#af-form-261449952 .af-quirksMode{padding-right:10px;padding-left:10px;}
+#af-form-261449952 .af-standards .af-element{padding-right:10px;padding-left:10px;}
+#af-form-261449952 .buttonContainer input.submit{background-color:#2398f7;background-image:url("http://thepowerrank.com/blog/wp-content/uploads/2012/07/signupnow-ribbon-orange.png");color:#2398F7;text-decoration:none;font-style:normal;font-weight:normal;font-size:16px;font-family:Georgia, serif;}
+#af-form-261449952 .buttonContainer input.submit{width:auto;}
+#af-form-261449952 .buttonContainer{text-align:center;}
+#af-form-261449952 button,#af-form-261449952 input,#af-form-261449952 submit,#af-form-261449952 textarea,#af-form-261449952 select,#af-form-261449952 label,#af-form-261449952 optgroup,#af-form-261449952 option{float:none;position:static;margin:0;}
+#af-form-261449952 div{margin:0;}
+#af-form-261449952 form,#af-form-261449952 textarea,.af-form-wrapper,.af-form-close-button,#af-form-261449952 img{float:none;color:inherit;position:static;background-color:none;border:none;margin:0;padding:0;}
+#af-form-261449952 input,#af-form-261449952 button,#af-form-261449952 textarea,#af-form-261449952 select{font-size:100%;}
+#af-form-261449952 select,#af-form-261449952 label,#af-form-261449952 optgroup,#af-form-261449952 option{padding:0;}
+#af-form-261449952,#af-form-261449952 .quirksMode{width:100%;max-width:300px;}
+#af-form-261449952.af-quirksMode{overflow-x:hidden;}
+#af-form-261449952{background-color:#B70202;border-color:transparent;border-width:1px;border-style:none;}
+#af-form-261449952{display:block;}
+#af-form-261449952{overflow:hidden;}
+.af-body .af-textWrap{text-align:left;}
+.af-body input.image{border:none!important;}
+.af-body input.submit,.af-body input.image,.af-form .af-element input.button{float:none!important;}
+.af-body input.text{width:100%;float:none;padding:2px!important;}
+.af-body.af-standards input.submit{padding:4px 12px;}
+.af-clear{clear:both;}
+.af-element label{text-align:left;display:block;float:left;}
+.af-element{padding:5px 0;}
+.af-form-wrapper{text-indent:0;}
+.af-form{text-align:left;margin:auto;}
+.af-quirksMode .af-element{padding-left:0!important;padding-right:0!important;}
+.lbl-right .af-element label{text-align:right;}
+body {
+}
+</style>
+<form method="post" class="af-form-wrapper" accept-charset="iso-8859-1" action="http://www.aweber.com/scripts/addlead.pl"  >
+<div style="display: none;">
+<input type="hidden" name="meta_web_form_id" value="261449952" />
+<input type="hidden" name="meta_split_id" value="" />
+<input type="hidden" name="listname" value="thepowerrank" />
+<input type="hidden" name="redirect" value="http://thepowerrank.com/please-confirm/" id="redirect_aa8acd72ad78468655e36cf6542f974c" />
+<input type="hidden" name="meta_redirect_onlist" value="http://thepowerrank.com/you-have-already-subscribed/" />
+<input type="hidden" name="meta_adtracking" value="Email_Newsletter_Sign_Up,_Football_Resource,_Red" />
+<input type="hidden" name="meta_message" value="1" />
+<input type="hidden" name="meta_required" value="email" />
+
+<input type="hidden" name="meta_tooltip" value="email||Enter your best email" />
+</div>
+<div id="af-form-261449952" class="af-form"><div id="af-body-261449952"  class="af-body af-standards">
+<div class="af-element">
+<label class="previewLabel" for="awf_field-63991141"></label>
+<div class="af-textWrap"><input class="text" id="awf_field-63991141" type="text" name="email" value="Enter your best email" tabindex="500" onfocus=" if (this.value == 'Enter your best email') { this.value = ''; }" onblur="if (this.value == '') { this.value='Enter your best email';} " />
+</div><div class="af-clear"></div>
+</div>
+<div class="af-element buttonContainer">
+<input name="submit" id="af-submit-image-261449952" type="image" class="image" style="background: none; max-width: 100%;" alt="Submit Form" src="http://thepowerrank.com/blog/wp-content/uploads/2012/07/signupnow-ribbon-orange.png" tabindex="501" />
+<div class="af-clear"></div>
+</div>
+</div>
+</div>
+<div style="display: none;"><img src="http://forms.aweber.com/form/displays.htm?id=TGyMLCycnKxM" alt="" /></div>
+</form>
+<script type="text/javascript">
+    <!--
+    (function() {
+        var IE = /*@cc_on!@*/false;
+        if (!IE) { return; }
+        if (document.compatMode && document.compatMode == 'BackCompat') {
+            if (document.getElementById("af-form-261449952")) {
+                document.getElementById("af-form-261449952").className = 'af-form af-quirksMode';
+            }
+            if (document.getElementById("af-body-261449952")) {
+                document.getElementById("af-body-261449952").className = "af-body inline af-quirksMode";
+            }
+            if (document.getElementById("af-header-261449952")) {
+                document.getElementById("af-header-261449952").className = "af-header af-quirksMode";
+            }
+            if (document.getElementById("af-footer-261449952")) {
+                document.getElementById("af-footer-261449952").className = "af-footer af-quirksMode";
+            }
+        }
+    })();
+    -->
+</script>
+
+<!-- /AWeber Web Form Generator 3.0 -->
+        <div id="credit"><p>visualization by <a href="http://www.angichau.com">angi chau</a> with <a href="http://mbostock.github.com/d3/">d3</a>, numbers based on <a href="http://thepowerrank.com/ncaamb.html">The Power Rank</a>.</p></div>
+        <script type="text/javascript" src="ncaabracket.js"></script>
+    
     <script>
       MP.api.ready(function() {
         // Run queries and display results here
